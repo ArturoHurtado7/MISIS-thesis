@@ -6,32 +6,28 @@
 
 \begin{document}
 
-% \frontmatter
+    \frontmatter
 
-\include{title}
-\include{abstract}
-\include{acknowledgements}
-\tableofcontents
-\listoffigures
+        \include{title}
+        % \include{abstract}
+        % \include{acknowledgements}
+        \tableofcontents
+        % \listoffigures
 
-\mainmatter
-\input{chapter-titlepage}
-\include{introduction}
-%\include{CHAPTER_FILE_NAME}
+    \mainmatter
+        \input{chapter-titlepage}
+        \include{introduction}
+        \include{theory}
+        \include{methodology}
 
+    % \appendix
+    %     \include{appendix-a}
 
-%Adding appendices if needed
-\appendix
-\include{appendix-a}
+    \backmatter
+        \bibliography{bib/local,bib/writing}
 
-\backmatter
-\bibliography{bib/local,bib/writing}
-
-\printindex
-\addcontentsline{toc}{chapter}{List of Terms}
-\printindex[symbols]
-\include{acronym}
+        % \printindex
+        % \addcontentsline{toc}{chapter}{List of Terms}
+        % \printindex[symbols]
+        % \include{acronym}
 \end{document}
-
-\endinput
-

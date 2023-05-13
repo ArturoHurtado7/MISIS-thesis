@@ -97,8 +97,8 @@
 
 \AtEndOfClass{\raggedbottom}
 
-\RequirePackage[english]{babel}
-\selectlanguage{english}
+\RequirePackage[USenglish]{babel}
+\selectlanguage{USenglish}
 
 \RequirePackage{url}
 \DeclareUrlCommand\formatdoi{\urlstyle{rm}}
@@ -518,7 +518,7 @@
 \RedeclareSectionCommands{subsection}
 \RedeclareSectionCommands{subsubsection}
 \RedeclareSectionCommands{paragraph}
-%\microtypesetup{expansion=false}%
+% \microtypesetup{expansion=false}%
 
 
 \definecolor{halfgray}{gray}{0.55} % chapter numbers will be semi transparent .5 .55 .6 .0
