@@ -1,20 +1,24 @@
+% $Id:introduction.tex  $
+% !TEX root = main.tex
+
+
 \chapter{Introduction}
-\label{cha:introduction}
 
 \section{Context}
-\label{sec:Context}
 
-\section{Problem statement}
-\label{sec:Problem statement}
+Biometric speech recognition systems frequently encounter diverse types of spoofing attacks, among which the most prevalent are speech synthesis and speech conversion attacks. Such fraudulent activities pose a significant threat to the security of the system, as they may deceive the biometric speech recognition system into accepting these attacks as authentic \cite{xue2023physiological}.
 
-Biometric speech recognition systems frequently encounter diverse types of spoofing attacks, among which the most prevalent are speech synthesis and speech conversion attacks. Such fraudulent activities pose a significant threat to the security of the system, as they may deceive the biometric speech recognition system into accepting these attacks as authentic \cite{xue2023physiological}.\\
+spoofing attacks can lead to unauthorized access, financial fraud, or identity theft, and how these can have serious implications for individuals and organizations alike. In the last decade with the appearance of new deep learning generative algorithms such as generative adversarial networks (GANs) \cite{goodfellow2020generative} and variational autoencoders (VAEs) \cite{kingma2013auto} the potential to been affected by spoofing attacks has increased, and the need for improve systems that helps to recognize these attacks is urgent, although in the last decade the advance in the anti-spoofing models is significant.
 
-spoofing attacks can lead to unauthorized access, financial fraud, or identity theft, and how these can have serious implications for individuals and organizations alike. In the last decade with the appearance of new deep learning generative algorithms such as generative adversarial networks (GANs) [3] and variational autoencoders (VAEs) [4] the potential to been affected by spoofing attacks has increased, and the need for improve systems that helps to recognize these attacks is urgent, although in the last decade the advance in the anti-spoofing models is significative.\\
+\section{Problem Statement}
 
-Previous results with English pre-trained models have revealed that the anti-spoof models trained with datasets in English have a noticeable degradation in performance when are used on datasets in Spanish. Multi-language capabilities cannot be assumed even using state-of-the-art architectures. [2], even these capabilities cannot be assumed either in the same language, because some kind of accent-bias in the training datasets or features extraction processes.\\
+Previous results with English pre-trained models have revealed that the anti-spoof models trained with datasets in English have a noticeable degradation in performance when are used on datasets in Spanish. Multi-language capabilities cannot be assumed even using state-of-the-art architectures. \cite{tamayo2022voice}, even these capabilities cannot be assumed either in the same language, because some kind of accent-bias in the training datasets or features extraction processes.
 
-Current anti-spoofing mechanisms used to classify audio signals as spoof or bona-fide often rely on systems trained on homogenous datasets that do not take in account multiple accents nor languages []. This limits the effectiveness of these mechanisms, as they may not be able to accurately detect spoofing attacks in scenarios where the attacker or the genuine user have different accents than the system was trained. Therefore, there is a need for a more robust anti-spoofing architecture that can detect spoofing attacks regardless of the accent used by the attacker or the user.\\
+Current anti-spoofing mechanisms used to classify audio signals as spoof or bona-fide often rely on systems trained on homogenous datasets that do not take in account multiple accents nor languages. This limits the effectiveness of these mechanisms, as they may not be able to accurately detect spoofing attacks in scenarios where the attacker or the genuine user have different accents than the system was trained. Therefore, there is a need for a more robust anti-spoofing architecture that can detect spoofing attacks regardless of the accent used by the attacker or the user.
 
+% \ac{CQCC}
+% \acs{CQCC}
+% \acl{CQCC}
 
 \section{Justification}
 
@@ -22,13 +26,15 @@ Current anti-spoofing mechanisms used to classify audio signals as spoof or bona
 
 \section{Objectives}
 
-\textbf{General objective}: To develop an anti-spoofing system that can accurately detect spoofing attacks regardless of the attacker's accent or language. Based on the back end and front-end architecture, with the front-end responsible for processing the audio signals and extracting features, and the back-end responsible for classifying the audio signals as either spoof or genuine (bona-fide). 
+\subsection{General objective}
 
-\section{Specific objectives}
+\textbf{General objective}: To develop an anti-spoofing system that can accurately detect spoofing attacks regardless of the attacker's accent or language. Based on the back end and front-end architecture, with the front-end responsible for processing the audio signals and extracting features, and the back-end responsible for classifying the audio signals as either spoof or genuine (bona-fide). Therefore, the objectives of this project are:
+
+\subsection{Specific Objectives}
 
 \begin{enumerate}
-    \item Implement multiple front-end models, including CQCC, MFCC, LFCC, Spectrogram, and Self-supervised models, that can extract relevant features from the audio signals, and analyze the relationship between accents and feature extraction.
-    \item Implement multiple back-end models using LCNN, Bi-LSTM, GAP Layers that can classify the audio signals as either spoof or bona-fide and analyze the impact of the different back-end layers on the overall performance of the system.
+    \item Implement multiple front-end models, including \acs{CQCC}, \acs{MFCC}, \acs{LFCC}, Spectrogram, and Self-supervised models, that can extract relevant features from the audio signals, and analyze the relationship between accents and feature extraction.
+    \item Implement multiple back-end models using \acs{LCNN}, \acs{Bi-LSTM}, \acs{GAP} Layers that can classify the audio signals as either spoof or bona-fide and analyze the impact of the different back-end layers on the overall performance of the system.
     \item compare the performance of different combinations of front-end and back-end architectures on multiple training sets considering language and accent. and analyze the impact of accent and language diversity on the classification accuracy.
     \item Analyze the obtained results and detect which architecture is the more appropriate to each language and accent.
 \end{enumerate}

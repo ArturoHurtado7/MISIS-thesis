@@ -9,15 +9,16 @@
     \frontmatter
 
         \include{title}
-        % \include{abstract}
+        \include{abstract}
         % \include{acknowledgements}
         \tableofcontents
         % \listoffigures
+        % \listoftables
 
     \mainmatter
         \input{chapter-titlepage}
         \include{introduction}
-        \include{theory}
+        \include{related-work}
         \include{methodology}
 
     % \appendix
@@ -26,8 +27,8 @@
     \backmatter
         \bibliography{bib/local,bib/writing}
 
-        % \printindex
+        \printindex
         % \addcontentsline{toc}{chapter}{List of Terms}
         % \printindex[symbols]
-        % \include{acronym}
+        \include{acronym}
 \end{document}

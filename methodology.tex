@@ -1,16 +1,19 @@
+% $Id:methodology.tex  $
+% !TEX root = main.tex
+
 \chapter{Methodology}
 
 \section{Methodology framework}
 
-Evaluate the performance of the anti-spoofing architecture using the Equal Error Rate (EER) metric and compare it with existing anti-spoofing techniques. And perform statistical analysis to Analyze the potential of using accent-based metrics, such as pitch and valence, to improve the accuracy of the spoof detection system.\\
+Evaluate the performance of the anti-spoofing architecture using the \ac{EER} metric and compare it with existing anti-spoofing techniques. And perform statistical analysis to Analyze the potential of using accent-based metrics, such as pitch and valence, to improve the accuracy of the spoof detection system.
 
-Spoofing attacks on voice-based biometric systems are becoming increasingly sophisticated and difficult to detect, posing a significant security threat[]. The current state-of-the-art anti-spoofing systems are typically trained on homogeneous data sets that do not account for the variability in accents and languages used by attackers[]. This limits their effectiveness in real-world scenarios to generate spoofed audio where a variety of accents and languages are used.\\
+Spoofing attacks on voice-based biometric systems are becoming increasingly sophisticated and difficult to detect, posing a significant security threat[]. The current state-of-the-art anti-spoofing systems are typically trained on homogeneous data sets that do not account for the variability in accents and languages used by attackers[]. This limits their effectiveness in real-world scenarios to generate spoofed audio where a variety of accents and languages are used.
 
-To address this challenge, we propose combinate multiple anti-spoofing architectures using multiple front-end and back-end models. The front-end models will include Cepstral Coefficients of Quefrency Cancellation (CQCC), Mel-frequency Cepstral Coefficients (MFCC), Linear Frequency Cepstral Coefficients (LFCC), Spectrogram, and a Self-supervised models finetuned as feature extractor.\\
+To address this challenge, we propose combinate multiple anti-spoofing architectures using multiple front-end and back-end models. The front-end models will include \acs{CQCC}, \acs{MFCC}, \acs{LFCC}, Spectrogram, and a Self-supervised models finetuned as feature extractor.
 
-These models are designed to extract discriminative features from the audio signals that are robust to variations in accent and language. The back-end models include layers of Local Convolutional Neural Networks (LCNN), Bidirectional Long Short-Term Memory Networks (Bi-LSTM), and Global Average Pooling (GAP) layers. These models are designed to classify the audio signals as either bona-fide or spoofed based on the features extracted by the front-end models.\\
+These models are designed to extract discriminative features from the audio signals that are robust to variations in accent and language. The back-end models include layers of \acs{LCNN}, \acs{Bi-LSTM}, and \acs{GAP} layers. These models are designed to classify the audio signals as either bona-fide or spoofed based on the features extracted by the front-end models.\\
 
-The proposed architecture will be evaluated using a dataset that includes audio samples from multiple accents in Spanish language. We will conduct a statistical analysis to determine the most reliable combination of front-end and back-end models for the classification task, based on the Equal Error Rate (EER) and other metrics such as the Receiver Operating Characteristic (ROC) curve and the Area Under the Curve (AUC).\\
+The proposed architecture will be evaluated using a dataset that includes audio samples from multiple accents in Spanish language. We will conduct a statistical analysis to determine the most reliable combination of front-end and back-end models for the classification task, based on the \acs{EER} and other metrics such as the Receiver Operating Characteristic (ROC) curve and the Area Under the Curve (AUC).\\
 
 The proposed anti-spoofing architecture has the potential to significantly improve the security of voice-based biometric systems by detecting spoofing attacks regardless of the accent or language used by the attacker. The combination of multiple front-end and back-end models provides a robust and effective approach to feature extraction and classification, while the statistical analysis provides a quantitative assessment of its performance.
 
@@ -23,17 +26,17 @@ The experiment workflow for this project will consist of the following stages:
     \item \textbf{Data Pre-processing:} The collected audio data will undergo pre-processing to remove noise, filter out non-speech segments, and normalize the audio signals. This pre-processing step will be performed using open-source software such as librosa and PyAudio, and we will create the necessary functions for it.
     \item \textbf{Feature Extraction} The pre-processed audio signals will be fed into multiple front-end models to extract features that are robust to variations in accent and language. We will extract features using the following techniques that has been proven in the feature extraction for audio tasks: 
     \begin{itemize}
-        \item Constant-Q Cepstral Coefficients (CQCC)
-        \item Mel-frequency Cepstral Coefficients (MFCC)
-        \item Linear Frequency Cepstral Coefficients (LFCC)
+        \item \ac{CQCC}
+        \item \ac{MFCC}
+        \item \ac{LFCC}
         \item Spectrogram
         \item Self-supervised models
     \end{itemize}
-    \item \textbf{Classification:} The features extracted by the front-end models will be fed into multiple back-end models to classify the audio signals as either bona-fide or spoofed. We will use a deep neuronal network (DNN) architecture with different layers that has been proved in some image and audio classification tasks:
+    \item \textbf{Classification:} The features extracted by the front-end models will be fed into multiple back-end models to classify the audio signals as either bona-fide or spoofed. We will use a \ac{DNN} architecture with different layers that has been proved in some image and audio classification tasks:
     \begin{itemize}
-        \item Light Convolutional Neural Networks (LCNN)
-        \item Bidirectional Long Short-Term Memory Networks (Bi-LSTM)
-        \item Global Average Pooling (GAP)
+        \item \ac{LCNN}
+        \item \ac{Bi-LSTM}
+        \item \ac{GAP}
     \end{itemize}
     \item \textbf{Bandwidth Analysis:} We will analyze the bandwidth of each model to determine which frequency band is more relevant in the anti-spoofing classification task. This analysis will help us select the most efficient filters for the front-end models
     \item \textbf{Statistical Analysis:} We will conduct a statistical analysis to determine the most reliable combination of front-end and back-end models for the classification task. We will use the Equal Error Rate (EER) and other metrics such as the Receiver Operating Characteristic (ROC) curve and the Area Under the Curve (AUC) to evaluate the performance of the different models.
