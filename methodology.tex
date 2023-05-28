@@ -5,17 +5,24 @@
 
 \section{Methodology framework}
 
-Evaluate the performance of the anti-spoofing architecture using the \ac{EER} metric and compare it with existing anti-spoofing techniques. And perform statistical analysis to Analyze the potential of using accent-based metrics, such as pitch and valence, to improve the accuracy of the spoof detection system.
+The objective of this study is to assess the performance of different antispoofing architectures through the utilization of the ERR metric, while also conducting a comparative analysis of the effects of language and accents. Furthermore, a statistical analysis will be performed to evaluate the potential of accent-based metrics, such as pitch and valence, in enhancing the accuracy of the spoof  detection capacity. 
 
-Spoofing attacks on voice-based biometric systems are becoming increasingly sophisticated and difficult to detect, posing a significant security threat. The current state-of-the-art anti-spoofing systems are typically trained on homogeneous data sets that do not account for the variability in accents and languages used by attackers. This limits their effectiveness in real-world scenarios to generate spoofed audio where a variety of accents and languages are used.
+%Evaluate the performance of the anti-spoofing architecture using the \ac{EER} metric and compare it with existing anti-spoofing techniques. And perform statistical analysis to Analyze the potential of using accent-based metrics, such as pitch and valence, to improve the accuracy of the spoof detection system.
 
-To address this challenge, we propose combinate multiple anti-spoofing architectures using multiple front-end and back-end models. The front-end models will include \acs{CQCC}, \acs{MFCC}, \acs{LFCC}, Spectrogram, and a Self-supervised models finetuned as feature extractor.
+The complexity and sophistication of spoofing attacks on voice-based biometric systems are continuously evolving, presenting a substantial security challenge. Existing state-of-the-art anti-spoofing systems are typically trained on homogeneous datasets that do not encompass the diverse range of accents and languages employed by attackers. Consequently, their efficacy in real-world scenarios is restricted when faced with the generation of spoofed audio encompassing various accents and languages.
 
-These models are designed to extract discriminative features from the audio signals that are robust to variations in accent and language. The back-end models include layers of \acs{LCNN}, \acs{Bi-LSTM}, and \acs{GAP} layers. These models are designed to classify the audio signals as either bona-fide or spoofed based on the features extracted by the front-end models.\\
+%Spoofing attacks on voice-based biometric systems are becoming increasingly sophisticated and difficult to detect, posing a significant security threat. The current state-of-the-art anti-spoofing systems are typically trained on homogeneous data sets that do not account for the variability in accents and languages used by attackers.This limits their effectiveness in real-world scenarios to generate spoofed audio where a variety of accents and languages are used.
 
-The proposed architecture will be evaluated using a dataset that includes audio samples from multiple accents in Spanish language. We will conduct a statistical analysis to determine the most reliable combination of front-end and back-end models for the classification task, based on the \acs{EER}.
+%To address this challenge, we propose to investigate the influence of language and accents in different antispoof systems architectures. Implementing different combinations of front-end and back-end models, we aim to cover the most relevant architectures in the literature. The front-end models will include \acs{CQCC}, \acs{MFCC}, \acs{LFCC}, Spectrogram, and a Self-supervised models finetuned as feature extractor. These models are designed to extract discriminative features from the audio signals and we want to test how robust they are to variations in accent and language. 
 
-The proposed anti-spoofing architecture has the potential to significantly improve the security of voice-based biometric systems by detecting spoofing attacks regardless of the accent or language used by the attacker. The combination of multiple front-end and back-end models provides a robust and effective approach to feature extraction and classification, while the statistical analysis provides a quantitative assessment of its performance.
+In order to tackle this challenge, our study aims to examine the impact of language and accents on various antispoof system architectures. We intend to implement different combinations of front-end and back-end models, encompassing the most significant architectures documented in the literature. The front-end models that we will incorporate include Cepstral-Quantization Coefficient (CQCC), Mel Frequency Cepstral Coefficient (MFCC), Linear Frequency Cepstral Coefficient (LFCC), Spectrogram, as well as a Self-supervised model fine-tuned for feature extraction. These models have been specifically designed to extract distinctive features from audio signals, and we seek to assess their robustness in the face of accent and language variations.
+
+
+The back-end models include layers of \acs{LCNN}, \acs{Bi-LSTM}, and \acs{GAP} layers. These models are designed to classify the audio signals as either bonafide or spoofed based on the features extracted by the front-end models.\\
+
+The proposed architecture will be evaluated using a dataset that includes audio samples from multiple accents in Spanish and English languages. We will conduct a statistical analysis to determine the most reliable combination of front-end and back-end models for the classification task, based on the \acs{EER}.
+
+Selecting the most appropriate anti-spoofing architecture per language/accent has the potential to significantly improve the security of voice-based biometric systems. The combination of multiple front-end and back-end models provides a robust and effective approach to feature extraction and classification, while the statistical analysis provides a quantitative assessment of its performance.
 
 \section{Experiment workflow}
 
@@ -23,8 +30,8 @@ The experiment workflow for this project will consist of the following stages:
 
 \begin{enumerate}
     \item \textbf{Data Collection:} To ensure diversity in accents and languages, we will collect audio data from publicly available datasets, such as ASVSpoof Challenge \cite{yamagishi2021asvspoof} in their various versions, as well as from a dataset created by our research group in prior projects.
-    \item \textbf{Data Pre-processing:} The collected audio data will undergo pre-processing to remove noise, filter out non-speech segments, and normalize the audio signals. This pre-processing step will be performed using open-source software such as librosa and PyAudio, and we will create the necessary functions for it.
-    \item \textbf{Feature Extraction} The pre-processed audio signals will be fed into multiple front-end models to extract features that are robust to variations in accent and language. We will extract features using the following techniques that has been proven in the feature extraction for audio tasks: 
+    \item \textbf{Data Pre-processing:} The collected audio data will undergo pre-processing to remove noise, filter out non-speech segments, and normalize the audio signals. This pre-processing step will be performed using open-source software such as Librosa and PyAudio, and we will create the necessary functions for it.
+    \item \textbf{Feature Extraction} The pre-processed audio signals will be fed into multiple front-end models to extract different feature sets. We will extract features using the following techniques that have been previously used in the literature for audio tasks, and in particular for antispoof systems: 
     \begin{itemize}
         \item \ac{CQCC}
         \item \ac{MFCC}
@@ -32,15 +39,15 @@ The experiment workflow for this project will consist of the following stages:
         \item Spectrogram
         \item Self-supervised models
     \end{itemize}
-    \item \textbf{Classification:} The features extracted by the front-end models will be fed into multiple back-end models to classify the audio signals as either bona-fide or spoofed. We will use a \ac{DNN} architecture with different layers that has been proved in some image and audio classification tasks:
+    \item \textbf{Classification:} The features extracted by the front-end models will be fed into multiple back-end models to classify the audio signals as either bona-fide or spoofed. We will use a \ac{DNN} architecture with different layers combinations. In particular, we are interested in the following layers types that have been useful in previous research:
     \begin{itemize}
         \item \ac{LCNN}
         \item \ac{Bi-LSTM}
         \item \ac{GAP}
     \end{itemize}
     \item \textbf{Bandwidth Analysis:} We will analyze the bandwidth of each model to determine which frequency band is more relevant in the anti-spoofing classification task. This analysis will help us select the most efficient filters for the front-end models
-    \item \textbf{Statistical Analysis:} We will conduct a statistical analysis to determine the most reliable combination of front-end and back-end models for the classification task. We will use \ac{EER}. %and other metrics such as the Receiver Operating Characteristic (ROC) curve and the Area Under the Curve (AUC) to evaluate the performance of the different models.
-    \item \textbf{Feedback:} Based on the previous results, we will refine the front-end and back-end models and iterate through the feature extraction and classification steps until we achieve a high level of accuracy.
+    \item \textbf{Statistical Analysis:} We will conduct a statistical analysis over EER metric to determine the most reliable combination of front-end and back-end models for the classification task. %We will use \ac{EER}. %and other metrics such as the Receiver Operating Characteristic (ROC) curve and the Area Under the Curve (AUC) to evaluate the performance of the different models.
+    \item \textbf{Feedback:} Based on the previous results, we will refine the front-end and back-end models and iterate through the feature extraction and classification steps to find the best combination.
 \end{enumerate}
 
 
