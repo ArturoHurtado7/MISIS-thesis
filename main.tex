@@ -4,6 +4,10 @@
 
 \everymath{\displaystyle}
 
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{makecell}
+
 \begin{document}
 
     \frontmatter
@@ -12,14 +16,14 @@
         \include{abstract}
         % \include{acknowledgements}
         \tableofcontents
-        % \listoffigures
-        % \listoftables
+        \listoffigures
+        \listoftables
 
     \mainmatter
         \input{chapter-titlepage}
         \include{introduction}
-        \include{related-work}
         \include{methodology}
+        \include{related-work}
 
     % \appendix
     %     \include{appendix-a}

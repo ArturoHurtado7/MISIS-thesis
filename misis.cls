@@ -25,7 +25,6 @@
 %   ***********************************
 %   *      BASIC PACKAGES         *
 %   ***********************************
-
 \RequirePackage{ifthen}
 \RequirePackage{ifdraft}
 \RequirePackage{ifxetex}
